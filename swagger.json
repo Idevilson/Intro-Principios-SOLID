@@ -1,0 +1,68 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api para praticar os principios SOLID",
+        "description": "This is a api of USERS",
+        "version": "1.0.0",
+        "contact": {
+            "email": "idevilson.developer@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "summary": "Create a User",
+                "description": "Create a new User",
+                "requestBody": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type" : "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "Idevilson Junior",
+                                "email": "idevilson.developer@gmail.com"
+                            }
+                        }
+                    }
+                }, 
+                "responses": {
+                    "201": {
+                        "description": "created"
+                    },
+                    "400": {
+                        "description": "Non authorized"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["User"],
+                "summary": "List all users",
+                "description": "List all users",
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json" : {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
