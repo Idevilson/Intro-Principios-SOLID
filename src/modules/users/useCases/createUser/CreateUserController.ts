@@ -12,7 +12,7 @@ class CreateUserController {
       const user = this.createUserUseCase.execute({ email, name });
       return response.status(201).json(user).send();
     } catch (error) {
-      return response.status(400).send();
+      return response.status(400).json({ error: "Non authorized" }).send();
     }
   }
 }

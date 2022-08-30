@@ -9,6 +9,7 @@ class ListAllUsersUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
   execute({ user_id }: IRequest): User[] {
+    console.log(user_id)
     const userFoundById = this.usersRepository.findById(user_id);
 
     if (userFoundById !== undefined) {
